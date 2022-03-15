@@ -52,7 +52,7 @@ export class GifsService {
 
     const params = new HttpParams()
           .set('api_key', this.apiKey)
-          .set('limit', '10')
+          .set('limit', this.limit.toString())
           .set('q', valor );
 
     
@@ -62,7 +62,6 @@ export class GifsService {
     // observables es del interface SerchGifsResponse
     // Tipeo la busqueda al tipo <SerchGifsResponse>
     this.http.get<SerchGifsResponse>(`${ this.servicioUrl }/search`, { params } )
-    //this.http.get<SerchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=VNXXyNfetu7k6HfUJXyNZT9J1OiEZCLg&q=${ valor }&limit=10`)
     .subscribe(resp => {
       console.log( resp.data );
       this.resultados = resp.data;
