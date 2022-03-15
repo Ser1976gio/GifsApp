@@ -1,0 +1,10 @@
+<h5>Buscar: </h5>
+ <!-- TxtBuscar refers to the input element; pass its `value` to an event handler 
+      (keyup.enter)="buscar(txtBuscar.value)" , aqui paso el value -->
+<input 
+    #txtBuscar
+    type="text" 
+    class ="form-control"
+    placeholder="buscar gifs....."
+    (keyup.enter)="buscar()"  
+>
